@@ -1,0 +1,224 @@
+snippets:
+  - id: 1
+    name: "Factorial"
+    descriptive: true
+    code: |
+      result = 1
+      x = 4
+      while x > 1:
+          result = result * x
+          x = x - 1
+
+      print(result)
+
+  - id: 2
+    name: "Sum of three digits"
+    descriptive: true
+    code: |
+      number = 323
+      result = 0
+
+      while number != 0:
+          result = result + number % 10
+          number = number // 10
+      print(result)
+
+  - id: 3
+    name: "Exponentiation"
+    descriptive: true
+    code: |
+      num1 = 2
+      num2 = 3
+      result = num1
+
+      for i in range(1, num2):
+          result = result * num1
+
+      print(result)
+
+  - id: 4
+    name: "Average of array"
+    descriptive: true
+    code: |
+      numbers = [2, 4, 1, 9]
+      number1 = 0
+      number2 = 0
+
+      while number1 < len(numbers):
+          number2 = number2 + numbers[number1]
+          number1 = number1 + 1
+
+      result = number2 / number1
+      print(result)
+
+  - id: 5
+    name: "Decimal to binary"
+    descriptive: true
+    code: |
+      i = 14
+      result = ""
+
+      while i > 0:
+          if i % 2 == 0:
+              result = "0" + result
+          else:
+              result = "1" + result
+          i = i // 2
+
+      print(result)
+
+  - id: "6a"
+    name: "Intersection of rectangles"
+    descriptive: false
+    code: |
+      a, b = 0, 0
+      c, d = 2, 2
+
+      e, f = 1, 1
+      g, h = 3, 3
+
+      if (
+          c < e or g < a or
+          d < f or h < b
+      ):
+          print("Q")
+      else:
+          print("P")
+
+  - id: "6b"
+    name: "Intersection of rectangles"
+    descriptive: true
+    code: |
+      rect1_x_min, rect1_y_min = 0, 0
+      rect1_x_max, rect1_y_max = 2, 2
+
+      rect2_x_min, rect2_y_min = 1, 1
+      rect2_x_max, rect2_y_max = 3, 3
+
+      if (
+          rect1_x_max < rect2_x_min or rect2_x_max < rect1_x_min or
+          rect1_y_max < rect2_y_min or rect2_y_max < rect1_y_min
+      ):
+          print("Rectangles do NOT intersect.")
+      else:
+          print("Rectangles DO intersect.")
+
+  - id: 7
+    name: "Median of array"
+    descriptive: true
+    code: |
+      array = [1, 2, 4, 5, 6, 10]
+      array.sort()
+
+      if len(array) % 2 == 1:
+          median = array[len(array)//2]
+      else:
+          median = (array[len(array)//2 - 1] + array[len(array)//2]) / 2
+
+      print(median)
+
+  - id: 8
+    name: "Swap variables"
+    descriptive: true
+    code: |
+      var1 = 23
+      var2 = 42
+
+      temp = var1
+      var1 = var2
+      var2 = temp
+
+      print(var1)
+
+  - id: 9
+    name: "Largest of three numbers"
+    descriptive: true
+    code: |
+      num1 = 5
+      num2 = 3
+      num3 = 10
+
+      if (num1 > num2 and num1 > num3):
+          print(num1)
+      elif (num2 > num1 and num2 > num3):
+          print(num2)
+      elif (num3 > num1 and num3 > num2):
+          print(num3)
+
+  - id: 10
+    name: "Reverse array output"
+    descriptive: true
+    code: |
+      array = [1, 6, 4, 10, 2]
+
+      result = ""
+
+      for i in range(len(array)//2):
+          tmp = array[len(array) - i - 1]
+          array[len(array) - i - 1] = array[i]
+          array[i] = tmp
+
+      for elem in array:
+          result = str(elem) + " " + result
+      print(result)
+
+  - id: "11a"
+    name: "Intersection of two circles"
+    descriptive: false
+    code: |
+      a, b, c = 0, 0, 5
+      d, e, f = 7, 0, 6
+
+      g = d - a
+      h = e - b
+
+      i = g * g + h * h
+      j = math.sqrt(i)
+
+      if c + f < j:
+          print("P")
+      else:
+          print("Q")
+
+  - id: "11b"
+    name: "Intersection of two circles"
+    descriptive: true
+    code: |
+      x1, y1, radius1 = 0, 0, 5
+      x2, y2, radius2 = 7, 0, 6
+
+      dx = x2 - x1
+      dy = y2 - y1
+
+      distance_squared = dx * dx + dy * dy
+      distance = math.sqrt(distance_squared)
+
+      if radius1 + radius2 < distance:
+          print('Circles do not intersect')
+      else:
+          print('Circles intersect')
+
+  - id: 12
+    name: "Prime check"
+    descriptive: true
+    code: |
+      number = 11
+      result = True
+
+      for i in range(2, number):
+          if number % i == 0:
+              result = False
+              break
+
+      print(result)
+
+  - id: 13
+    name: "Largest number in array"
+    descriptive: true
+    code: |
+      array = [2, 19, 5, 17]
+      result = array[0]
+      for x in array:
+          if x > result:
+              result = x
+      print(result)
